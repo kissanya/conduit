@@ -5,7 +5,7 @@
    ```
    A Registration osztály feladata a sikeres és sikertelen regisztráció
    végrehajtása és ellenőrzése frontend szinten
-
+  
    ```
 2. Bejelentkezés
 3. Adatkezelési nyilatkozat használata  

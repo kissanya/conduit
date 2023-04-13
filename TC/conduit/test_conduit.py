@@ -1,5 +1,5 @@
 import main_page
-import registration as register
+import register_user as register
 import allure
 
 
