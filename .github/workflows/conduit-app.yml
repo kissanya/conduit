@@ -1,4 +1,4 @@
-name: conduit
+name: conduit_app
 
 on:
   push:
