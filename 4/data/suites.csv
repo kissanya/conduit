@@ -1,4 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Thu Apr 13 14:28:55 GMT 2023","Thu Apr 13 14:29:13 GMT 2023","17289","TC.conduit","test_conduit","TestRegistration","","","10 új felhasználó rögzítése","testuser_920230413142855925751 felhasználó létrehozva"
-"passed","Thu Apr 13 14:28:54 GMT 2023","Thu Apr 13 14:28:54 GMT 2023","70","TC.conduit","test_conduit","TestMain","","","Conduit adatkezelési nyilatkozat","Adatkezelési nyilatkozat megléte és elfogadása"
-"passed","Thu Apr 13 14:28:53 GMT 2023","Thu Apr 13 14:28:53 GMT 2023","30","TC.conduit","test_conduit","TestMain","","","Conduit megjelenítése","Oldal megnyitása és a logó megjelenésének ellenőrzése"
