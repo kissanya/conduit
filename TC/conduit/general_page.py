@@ -1,8 +1,7 @@
 import time
-import TC.conduit.configuration as config
+import configuration as config
 from selenium import webdriver
 from datetime import datetime
-
 
 
 class GeneralPage:
@@ -35,4 +34,3 @@ if __name__ == '__main__':
     time.sleep(1)
     page.open()
     page.close()
-
