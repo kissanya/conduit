@@ -17,7 +17,7 @@ class GeneralPage:
 
     def close(self):
         self.browser.delete_all_cookies()
-        self.browser.close()
+        self.browser.quit()
 
     def refresh(self):
         self.browser.refresh()
