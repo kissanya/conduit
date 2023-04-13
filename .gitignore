@@ -1,8 +1,0 @@
-.git
-.idea
-node_modules/
-src/public/js/app.js
-src/node_modules
-src/deno_dir
-src/yarn.lock
-src/package-lock.json

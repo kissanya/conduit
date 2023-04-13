@@ -1,4 +1,0 @@
-import { HttpException } from "./http_exception.ts";
-export class HttpResponseException extends HttpException {
-}
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaHR0cF9yZXNwb25zZV9leGNlcHRpb24uanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJodHRwX3Jlc3BvbnNlX2V4Y2VwdGlvbi50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxPQUFPLEVBQUUsYUFBYSxFQUFFLE1BQU0scUJBQXFCLENBQUM7QUFRcEQsTUFBTSxPQUFPLHFCQUFzQixTQUFRLGFBQWE7Q0FBRyJ9
