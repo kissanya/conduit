@@ -3,7 +3,11 @@
 
 1. Regisztráció
 2. Bejelentkezés
-3. Adatkezelési nyilatkozat használata
+3. Adatkezelési nyilatkozat használata  
+   ```
+    ConduitMain osztály ellenőrzi a cookie panelt 
+    és nyugtázza azt.
+    ```
 4. Adatok listázása
 5. Több oldalas lista bejárása
 6. Új adat bevitel
