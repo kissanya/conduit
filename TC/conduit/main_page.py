@@ -1,5 +1,5 @@
-from TC.globals.general_page import GeneralPage
-from TC.globals import configuration as config
+from general_page import GeneralPage
+import configuration as config
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 

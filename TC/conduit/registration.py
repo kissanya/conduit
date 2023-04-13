@@ -2,12 +2,11 @@ import allure
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 
-import TC.globals.configuration as config
-from TC.globals.general_page import GeneralPage
+import configuration as config
+from general_page import GeneralPage
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
-from TC.globals.general_functions import get_new_user_name, users_data, get_users_from_file, create_users_file
-import os.path
+from general_functions import get_new_user_name, get_users_from_file, create_users_file
 
 
 class UserRegistration(GeneralPage):
@@ -90,6 +89,7 @@ class UserRegistration(GeneralPage):
                 allure.dynamic.description(f"{user_name} felhasználó létrehozva")
             else:
                 allure.dynamic.description(f"{user_name} felhasználó létrehozása sikertelen")
+        return result
 
 
 if __name__ == '__main__':

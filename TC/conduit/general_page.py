@@ -1,5 +1,5 @@
 import time
-import TC.globals.configuration as config
+import TC.conduit.configuration as config
 from selenium import webdriver
 from datetime import datetime
 

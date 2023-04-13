@@ -1,4 +1,4 @@
-import main_page as cm
+import main_page
 import registration as register
 import allure
 
@@ -6,7 +6,7 @@ import allure
 class TestMain:
 
     def setup_method(self):
-        self.page = cm.MainPage()
+        self.page = main_page.MainPage()
 
     def teardown_method(self):
         self.page.close()
