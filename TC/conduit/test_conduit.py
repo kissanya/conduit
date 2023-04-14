@@ -64,6 +64,6 @@ class TestLogin:
     @allure.id('TC5')
     @allure.epic("Felhasználó kezelés")
     @allure.title('Létező felhasználó bejelentkezése')
-    @allure.description(f'A létrehozott {default_user["username"]} felhasználó bejelentkeztetése')
+    @allure.description(f'A létrehozott {default_user["user_name"]} felhasználó bejelentkeztetése')
     def test_login_user(self):
         assert self.page.sign_in()
