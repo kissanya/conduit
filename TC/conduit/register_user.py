@@ -1,12 +1,11 @@
 import allure
 from selenium.webdriver.common.by import By
-from selenium.webdriver.remote.webelement import WebElement
 
 import configuration as config
 from general_page import GeneralPage
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
-from general_functions import get_new_user_name, get_users_from_file, create_users_file
+from general_functions import *
 
 
 class UserRegistration(GeneralPage):
@@ -28,12 +27,13 @@ class UserRegistration(GeneralPage):
         password_element = self.browser.find_element(By.XPATH, '//input[@placeholder="Password"]')
         return password_element
 
-    def submit_user(self) -> WebElement:
+    def submit_user(self):
         try:
             button = WebDriverWait(self.browser, 10).until(
                 ec.presence_of_element_located((By.XPATH, '//button[contains(text(), "Sign up")]')))
             return button
-        except:
+        except Exception as e:
+            allure.dynamic.description(e)
             return None
 
     def message_acknowledge(self):
@@ -83,12 +83,12 @@ class UserRegistration(GeneralPage):
         result = True
         create_users_file()
         for user in get_users_from_file():
-            user_id, user_name, email, password = user
-            result = result and self.register_user(user_name, email, password)
+            user_id, _user_name, _email, _password = user
+            result = result and self.register_user(_user_name, _email, _password)
             if result:
-                allure.dynamic.description(f"{user_name} felhasználó létrehozva")
+                allure.dynamic.description(f"{_user_name} felhasználó létrehozva")
             else:
-                allure.dynamic.description(f"{user_name} felhasználó létrehozása sikertelen")
+                allure.dynamic.description(f"{_user_name} felhasználó létrehozása sikertelen")
         return result
 
 

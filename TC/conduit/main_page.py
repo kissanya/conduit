@@ -22,6 +22,9 @@ class MainPage(GeneralPage):
         if len(panels) > 0:
             return panels[0]
 
+    def sign_in_button(self):
+        return self.browser.find_element(By.XPATH, '//a[@href="#/login"]')
+
     def policy_accept_button(self):
         return self.browser.find_element(By.CLASS_NAME,
                                          'cookie__bar__buttons__button--accept')

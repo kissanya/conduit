@@ -1,6 +1,9 @@
 import main_page
 import register_user as register
+import login_user as login
 import allure
+
+from configuration import *
 
 
 class TestMain:
@@ -48,3 +51,19 @@ class TestRegistration:
     @allure.description('Új felhasználónév, email, jelszó generálása, és regisztrációja a conduit felületen')
     def test_create_single_user(self):
         assert self.page.register_users_from_file()
+
+
+class TestLogin:
+
+    def setup_method(self):
+        self.page = login.LoginUser()
+
+    def teardown_method(self):
+        self.page.close()
+
+    @allure.id('TC5')
+    @allure.epic("Felhasználó kezelés")
+    @allure.title('Létező felhasználó bejelentkezése')
+    @allure.description(f'A létrehozott {default_user["username"]} felhasználó bejelentkeztetése')
+    def test_login_user(self):
+        assert self.page.sign_in()
