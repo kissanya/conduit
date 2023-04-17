@@ -1,0 +1,22 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Apr 17 19:53:18 GMT 2023","Mon Apr 17 19:53:20 GMT 2023","1303","TC.conduit","test_conduit","TestLoginLogout","","","Nem létező felhasználó bejelentkezésének visszautasítása","A dummy felhasználó bejelentkezésének elutasítása"
+"passed","Mon Apr 17 19:52:49 GMT 2023","Mon Apr 17 19:52:49 GMT 2023","24","TC.conduit","test_conduit","TestMain","","","Conduit megjelenítése","Oldal megnyitása és a logó megjelenésének ellenőrzése"
+"passed","Mon Apr 17 19:53:16 GMT 2023","Mon Apr 17 19:53:17 GMT 2023","806","TC.conduit","test_conduit","TestLoginLogout","","","Létező felhasználó bejelentkezése","A létrehozott tesztelek felhasználó bejelentkeztetése"
+"passed","Mon Apr 17 19:52:51 GMT 2023","Mon Apr 17 19:52:54 GMT 2023","2707","TC.conduit","test_conduit","TestRegistration","","","Új felhasználó rögzítése","Felhasználónév:testuser_020230417195251829156, email testuser_020230417195251829156@testmail.com,
+ jelszó Password_01. rögzítve"
+"passed","Mon Apr 17 19:52:56 GMT 2023","Mon Apr 17 19:53:12 GMT 2023","16577","TC.conduit","test_conduit","TestRegistration","","","10 új felhasználó rögzítése","testuser_020230417195256106579 felhasználó létrehozva
+testuser_120230417195256106604 felhasználó létrehozva
+testuser_220230417195256106611 felhasználó létrehozva
+testuser_320230417195256106617 felhasználó létrehozva
+testuser_420230417195256106622 felhasználó létrehozva
+testuser_520230417195256106628 felhasználó létrehozva
+testuser_620230417195256106633 felhasználó létrehozva
+testuser_720230417195256106639 felhasználó létrehozva
+testuser_820230417195256106644 felhasználó létrehozva
+testuser_920230417195256106649 felhasználó létrehozva
+"
+"passed","Mon Apr 17 19:53:24 GMT 2023","Mon Apr 17 19:53:25 GMT 2023","707","TC.conduit","test_conduit","TestUserActions","","","Cikkek listázása és mentése","A felhasználó által látható összes cikk listázása és mentése
+Hibaüzenet:
+"
+"passed","Mon Apr 17 19:53:21 GMT 2023","Mon Apr 17 19:53:22 GMT 2023","928","TC.conduit","test_conduit","TestLoginLogout","","","Létező felhasználó kijelentkezése","A létrehozott tesztelek felhasználó kijelentkeztetése"
+"passed","Mon Apr 17 19:52:50 GMT 2023","Mon Apr 17 19:52:50 GMT 2023","75","TC.conduit","test_conduit","TestMain","","","Conduit adatkezelési nyilatkozat","Adatkezelési nyilatkozat megléte és elfogadása"
