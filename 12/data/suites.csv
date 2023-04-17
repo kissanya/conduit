@@ -1,0 +1,16 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Apr 17 17:20:58 GMT 2023","Mon Apr 17 17:20:59 GMT 2023","991","TC.conduit","test_conduit","TestLoginLogout","","","Létező felhasználó kijelentkezése","A létrehozott tesztelek felhasználó kijelentkeztetése"
+"passed","Mon Apr 17 17:20:33 GMT 2023","Mon Apr 17 17:20:33 GMT 2023","77","TC.conduit","test_conduit","TestMain","","","Conduit megjelenítése","Oldal megnyitása és a logó megjelenésének ellenőrzése"
+"passed","Mon Apr 17 17:20:34 GMT 2023","Mon Apr 17 17:20:34 GMT 2023","144","TC.conduit","test_conduit","TestMain","","","Conduit adatkezelési nyilatkozat","Adatkezelési nyilatkozat megléte és elfogadása"
+"passed","Mon Apr 17 17:20:35 GMT 2023","Mon Apr 17 17:20:54 GMT 2023","18350","TC.conduit","test_conduit","TestRegistration","","","10 új felhasználó rögzítése","testuser_020230417172035662962 felhasználó létrehozva
+testuser_120230417172035663000 felhasználó létrehozva
+testuser_220230417172035663016 felhasználó létrehozva
+testuser_320230417172035663029 felhasználó létrehozva
+testuser_420230417172035663042 felhasználó létrehozva
+testuser_520230417172035663054 felhasználó létrehozva
+testuser_620230417172035663066 felhasználó létrehozva
+testuser_720230417172035663078 felhasználó létrehozva
+testuser_820230417172035663090 felhasználó létrehozva
+testuser_920230417172035663103 felhasználó létrehozva
+"
+"passed","Mon Apr 17 17:21:00 GMT 2023","Mon Apr 17 17:21:01 GMT 2023","1334","TC.conduit","test_conduit","TestLoginLogout","","","Nem létező felhasználó bejelentkezésének visszautasítása","A dummy felhasználó bejelentkezésének elutasítása"
