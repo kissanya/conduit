@@ -94,7 +94,7 @@ class UserPage(LoginUser):
             _message = f"Mentés megtörtént a {article_previews_file} fájlba"
             return True,_message
         except Exception as ex:
-            _message = f"Sikertelen mentés: {ex}"
+            _message = f"Sikertelen mentés: {str(ex)}"
             return False,_message
 
 
