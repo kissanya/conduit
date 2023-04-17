@@ -101,4 +101,4 @@ class TestUserActions:
         message = ""
         result = self.page.save_article_previews(message)
         allure.dynamic.description(f"{allure_default_descriptions['TC8']}\nHibaüzenet:\n{message}")
-        assert  result
+        assert result
