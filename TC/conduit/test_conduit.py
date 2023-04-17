@@ -51,7 +51,7 @@ class TestRegistration:
     @allure.id('TC4')
     @allure.epic("Felhasználó kezelés")
     @allure.title('10 új felhasználó rögzítése')
-    def test_create_single_user(self):
+    def test_create_users(self):
         assert self.page.register_users_from_file()
 
 
@@ -67,20 +67,20 @@ class TestLoginLogout:
     @allure.id('TC5')
     @allure.title('Létező felhasználó bejelentkezése')
     @allure.description(f'A létrehozott {default_user["user_name"]} felhasználó bejelentkeztetése')
-    def test_valid_user(self):
+    def test_valid_user_login(self):
         assert self.page.sign_in(default_user["email"], default_user["password"], default_user["user_name"])
 
     @allure.id('TC6')
     @allure.title('Nem létező felhasználó bejelentkezésének visszautasítása')
     @allure.description(f'A dummy felhasználó bejelentkezésének elutasítása')
-    def test_invalid_user(self):
+    def test_invalid_user_login(self):
         assert not database.exists_user("dummy", "dummy@dummy.com") and not self.page.sign_in("dummy@dummy.com",
                                                                                               "Password01", "dummy")
 
     @allure.id('TC7')
     @allure.title('Létező felhasználó kijelentkezése')
     @allure.description(f'A létrehozott {default_user["user_name"]} felhasználó kijelentkeztetése')
-    def test_valid_user(self):
+    def test_valid_user_logout(self):
         assert self.page.sign_in(default_user["email"], default_user["password"], default_user["user_name"])
         assert self.page.logout()
 
