@@ -2,7 +2,7 @@ import main_page
 import register_user as register
 import login_user as login
 import allure
-
+from user_page import UserPage
 from configuration import *
 from data_layer import database
 
@@ -28,6 +28,7 @@ class TestMain:
     def test_data_policy(self):
         assert self.page.accept_data_policy()
 
+
 @allure.epic("Felhasználó kezelés")
 class TestRegistration:
 
@@ -50,9 +51,9 @@ class TestRegistration:
     @allure.id('TC4')
     @allure.epic("Felhasználó kezelés")
     @allure.title('10 új felhasználó rögzítése')
-
     def test_create_single_user(self):
         assert self.page.register_users_from_file()
+
 
 @allure.epic("Felhasználó kezelés")
 class TestLoginLogout:
@@ -82,3 +83,19 @@ class TestLoginLogout:
     def test_valid_user(self):
         assert self.page.sign_in(default_user["email"], default_user["password"], default_user["user_name"])
         assert self.page.logout()
+
+
+@allure.epic("Felhasználó akciók")
+class TestUserActions:
+
+    def setup_method(self):
+        self.page = UserPage()
+
+    def teardown_method(self):
+        self.page.close()
+
+    @allure.id('TC8')
+    @allure.title('Cikkek listázása és mentése')
+    @allure.description(f'A felhasználó által látható összes cikk listázása és mentése')
+    def test_all_articles(self):
+        assert self.page.articles_preview()
