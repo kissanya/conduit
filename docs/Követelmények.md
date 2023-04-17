@@ -1,5 +1,6 @@
 
-# Követelmények
+# Tesztesetek fejlesztői dokumentáció
+
 
 1. Regisztráció
 >A Registration osztály feladata a sikeres és sikertelen regisztráció
@@ -7,10 +8,14 @@
 2. Bejelentkezés
 >LoginUser osztály valósítja meg a bejelentkezés, kijelentkezés funkciót
 3. Adatkezelési nyilatkozat használata  
->MainPage osztály ellenőrzi a cookie panelt 
->és nyugtázza azt.
+>_**TC01**_ testeset: MainPage osztály ellenőrzi a cookie panelt 
+>és nyugtázza azt. 
 4. Adatok listázása
+>
 5. Több oldalas lista bejárása
+>A **UserPage** osztály a bejelentkezett felhasználó által látható cikkek listáját
+> bejárja, és elmenti _article_previews.csv_ fájlban A _**TC08**_ testeset hajtja végre.
+> 
 6. Új adat bevitel
 7. Ismételt és sorozatos adatbevitel adatforrásból 
 
