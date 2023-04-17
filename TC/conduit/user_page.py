@@ -68,7 +68,7 @@ class UserPage(LoginUser):
                     temp_result.clear()
                     time.sleep(0.1)
                     print(f"Tries: {tries}")
-                    tries+=1
+                    tries += 1
                     continue
                 result.extend(temp_result)
         return result
@@ -81,10 +81,11 @@ class UserPage(LoginUser):
             try:
                 result.append((users[index_user].text, titles[index_user].text))
             except StaleElementReferenceException as e:
-                return  False
+                print(f"{e} occured")
+                return False
         return True
 
-    def save_article_previews(self) -> (bool,str):
+    def save_article_previews(self) -> (bool, str):
         try:
             with open(article_previews_file, 'w', encoding='UTF-8', newline='') as datafile:
                 writer = csv.writer(datafile)
@@ -92,14 +93,14 @@ class UserPage(LoginUser):
                 for row in self.articles_preview():
                     writer.writerow(row)
             _message = f"Mentés megtörtént a {article_previews_file} fájlba"
-            return True,_message
+            return True, _message
         except Exception as ex:
             _message = f"Sikertelen mentés: {str(ex)}"
-            return False,_message
+            return False, _message
 
 
 if __name__ == "__main__":
     user_page = UserPage()
     message = ""
-    user_page.save_article_previews(message)
+    user_page.save_article_previews()
     user_page.close()
