@@ -1,2 +1,0 @@
-Waiting for load page complete: 0.029137134552001953
-Waiting for load page complete: 0.04122209548950195

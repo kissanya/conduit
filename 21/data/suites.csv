@@ -1,0 +1,22 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Apr 17 20:14:24 GMT 2023","Mon Apr 17 20:14:25 GMT 2023","1310","TC.conduit","test_conduit","TestLoginLogout","","","Nem létező felhasználó bejelentkezésének visszautasítása","A dummy felhasználó bejelentkezésének elutasítása"
+"failed","Mon Apr 17 20:14:29 GMT 2023","Mon Apr 17 20:14:29 GMT 2023","21","TC.conduit","test_conduit","TestUserActions","","","Cikkek listázása és mentése","A felhasználó által látható összes cikk listázása és mentése
+Üzenet:
+Sikertelen mentés: "
+"passed","Mon Apr 17 20:14:21 GMT 2023","Mon Apr 17 20:14:22 GMT 2023","868","TC.conduit","test_conduit","TestLoginLogout","","","Létező felhasználó bejelentkezése","A létrehozott tesztelek felhasználó bejelentkeztetése"
+"passed","Mon Apr 17 20:14:26 GMT 2023","Mon Apr 17 20:14:27 GMT 2023","990","TC.conduit","test_conduit","TestLoginLogout","","","Létező felhasználó kijelentkezése","A létrehozott tesztelek felhasználó kijelentkeztetése"
+"passed","Mon Apr 17 20:13:55 GMT 2023","Mon Apr 17 20:13:57 GMT 2023","2839","TC.conduit","test_conduit","TestRegistration","","","Új felhasználó rögzítése","Felhasználónév:testuser_020230417201355020604, email testuser_020230417201355020604@testmail.com,
+ jelszó Password_01. rögzítve"
+"passed","Mon Apr 17 20:13:53 GMT 2023","Mon Apr 17 20:13:53 GMT 2023","599","TC.conduit","test_conduit","TestMain","","","Conduit adatkezelési nyilatkozat","Adatkezelési nyilatkozat megléte és elfogadása"
+"passed","Mon Apr 17 20:13:59 GMT 2023","Mon Apr 17 20:14:17 GMT 2023","18504","TC.conduit","test_conduit","TestRegistration","","","10 új felhasználó rögzítése","testuser_020230417201359068462 felhasználó létrehozva
+testuser_120230417201359068486 felhasználó létrehozva
+testuser_220230417201359068495 felhasználó létrehozva
+testuser_320230417201359068502 felhasználó létrehozva
+testuser_420230417201359068509 felhasználó létrehozva
+testuser_520230417201359068517 felhasználó létrehozva
+testuser_620230417201359068523 felhasználó létrehozva
+testuser_720230417201359068530 felhasználó létrehozva
+testuser_820230417201359068537 felhasználó létrehozva
+testuser_920230417201359068543 felhasználó létrehozva
+"
+"passed","Mon Apr 17 20:13:51 GMT 2023","Mon Apr 17 20:13:51 GMT 2023","36","TC.conduit","test_conduit","TestMain","","","Conduit megjelenítése","Oldal megnyitása és a logó megjelenésének ellenőrzése"
