@@ -44,6 +44,9 @@ class UserRegistration(GeneralPage):
     def register_user(self, _username: str, _email: str, _password: str) -> bool:
         """
             :returns Új felhasználó felvétele és ellenőrzése  UI szinten
+            :arg _username : Felhasználónév
+            :arg _email: e-mail cím
+            :arg _password: jelszó
         """
         self.url = self.user_url
         self.open()

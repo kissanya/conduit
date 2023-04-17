@@ -5,6 +5,7 @@ import allure
 from user_page import UserPage
 from configuration import *
 from data_layer import database
+from general_functions import *
 
 
 @allure.epic("Adatkezelési nyilatkozat")
@@ -18,7 +19,7 @@ class TestMain:
 
     @allure.id('TC1')
     @allure.title('Conduit megjelenítése')
-    @allure.description('Oldal megnyitása és a logó megjelenésének ellenőrzése')
+    @allure.description(allure_default_descriptions["TC1"])
     def test_load(self):
         assert self.page.logo().is_displayed()
 
@@ -96,6 +97,8 @@ class TestUserActions:
 
     @allure.id('TC8')
     @allure.title('Cikkek listázása és mentése')
-    @allure.description(f'A felhasználó által látható összes cikk listázása és mentése')
+    @allure.description(allure_default_descriptions["TC8"])
     def test_all_articles(self):
-        assert self.page.articles_preview()
+        message = ""
+        assert self.page.save_article_previews(message)
+        allure.dynamic.description(f"{allure_default_descriptions['TC8']}\nHibaüzenet:\n{message}")

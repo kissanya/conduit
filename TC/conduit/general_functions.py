@@ -2,9 +2,13 @@ import csv
 import datetime
 import json
 
-users_data = "users_data.csv"
+users_data_file = "users_data.csv"
+article_previews_file = "article_previews.csv"
 
-
+allure_default_descriptions = {
+    "TC1": 'Oldal megnyitása és a logó megjelenésének ellenőrzése',
+    "TC8": 'A felhasználó által látható összes cikk listázása és mentése'
+}
 def get_new_user_name(num):
     return 'testuser_' + format(num, "000") + str(datetime.datetime.now()).replace(":", "").replace("-", "").replace(
         ".", "").replace(
@@ -19,8 +23,10 @@ def get_new_password(user):
     return user + "X."
 
 
+
+
 def create_users_file():
-    with open(users_data, 'w', encoding='UTF-8', newline='') as datafile:
+    with open(users_data_file, 'w', encoding='UTF-8', newline='') as datafile:
         writer = csv.writer(datafile)
         for user_id in range(10):
             user = get_new_user_name(user_id)
@@ -30,7 +36,7 @@ def create_users_file():
 
 
 def get_users_from_file():
-    with open(users_data, 'r', encoding='UTF-8') as datafile:
+    with open(users_data_file, 'r', encoding='UTF-8') as datafile:
         users = list(csv.reader(datafile))
         for user in users:
             yield user

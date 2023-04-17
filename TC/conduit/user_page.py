@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
-
+from general_functions import *
 from configuration import default_user
 from login_user import LoginUser
 from selenium.webdriver.support import expected_conditions as ec
@@ -64,6 +64,17 @@ class UserPage(LoginUser):
                 del titles
         return True
 
+    def save_article_previews(self, message) -> bool:
+        try:
+            with open(article_previews_file, 'w', encoding='UTF-8', newline='') as datafile:
+                writer = csv.writer(datafile)
+                for row in self.articles_preview():
+                    writer.writerow(row)
+            message = f"Mentés megtörtént a {article_previews_file} fájlba"
+            return True
+        except Exception as ex:
+            message = f"Sikertelen mentés: {ex}"
+            return  False
 
 if __name__ == "__main__":
     user_page = UserPage()
