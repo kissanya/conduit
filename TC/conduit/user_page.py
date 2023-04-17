@@ -84,18 +84,18 @@ class UserPage(LoginUser):
                 return  False
         return True
 
-    def save_article_previews(self, message) -> bool:
+    def save_article_previews(self) -> (bool,str):
         try:
             with open(article_previews_file, 'w', encoding='UTF-8', newline='') as datafile:
                 writer = csv.writer(datafile)
 
                 for row in self.articles_preview():
                     writer.writerow(row)
-            message = f"Mentés megtörtént a {article_previews_file} fájlba"
-            return True
+            _message = f"Mentés megtörtént a {article_previews_file} fájlba"
+            return True,_message
         except Exception as ex:
-            message = f"Sikertelen mentés: {ex}"
-            return False
+            _message = f"Sikertelen mentés: {ex}"
+            return False,_message
 
 
 if __name__ == "__main__":
