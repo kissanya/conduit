@@ -24,7 +24,6 @@ def get_chrome_driver() -> webdriver.Chrome:
         options.add_argument('--disable-dev-shm-usage')
     return webdriver.Chrome(service=service, options=options)
 
-
 if __name__ == '__main__':
     driver = get_chrome_driver()
     driver.get('http://localhost:1667')

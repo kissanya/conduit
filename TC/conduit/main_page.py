@@ -25,6 +25,13 @@ class MainPage(GeneralPage):
     def sign_in_button(self):
         return self.browser.find_element(By.XPATH, '//a[@href="#/login"]')
 
+    def sign_in_link_exists(self):
+        try:
+            element = self.sign_in_button()
+            return True
+        except:
+            return False
+
     def policy_accept_button(self):
         return self.browser.find_element(By.CLASS_NAME,
                                          'cookie__bar__buttons__button--accept')

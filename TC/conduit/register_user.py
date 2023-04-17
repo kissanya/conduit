@@ -81,14 +81,17 @@ class UserRegistration(GeneralPage):
 
     def register_users_from_file(self):
         result = True
+        message = ""
         create_users_file()
         for user in get_users_from_file():
             user_id, _user_name, _email, _password = user
             result = result and self.register_user(_user_name, _email, _password)
             if result:
-                allure.dynamic.description(f"{_user_name} felhasználó létrehozva")
+                message += f"{_user_name} felhasználó létrehozva\n"
             else:
-                allure.dynamic.description(f"{_user_name} felhasználó létrehozása sikertelen")
+                message += f"{_user_name} felhasználó létrehozása sikertelen\n"
+
+        allure.dynamic.description(message)
         return result
 
 

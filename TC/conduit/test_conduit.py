@@ -4,8 +4,10 @@ import login_user as login
 import allure
 
 from configuration import *
+from data_layer import database
 
 
+@allure.epic("Adatkezelési nyilatkozat")
 class TestMain:
 
     def setup_method(self):
@@ -26,7 +28,7 @@ class TestMain:
     def test_data_policy(self):
         assert self.page.accept_data_policy()
 
-
+@allure.epic("Felhasználó kezelés")
 class TestRegistration:
 
     def setup_method(self):
@@ -36,24 +38,24 @@ class TestRegistration:
         self.page.close()
 
     @allure.id('TC3')
-    @allure.epic("Felhasználó kezelés")
     @allure.title('Új felhasználó rögzítése')
-    @allure.description('Új felhasználónév, email, jelszó generálása, és regisztrációja a conduit felületen')
     def test_create_single_user(self):
         user_name = register.get_new_user_name(0)
         email = user_name + "@testmail.com"
         password = 'Password_01.'
         assert self.page.register_user(user_name, email, password)
+        allure.dynamic.description(
+            f'Felhasználónév:{user_name}, email {email},\n jelszó {password} rögzítve')
 
     @allure.id('TC4')
     @allure.epic("Felhasználó kezelés")
     @allure.title('10 új felhasználó rögzítése')
-    @allure.description('Új felhasználónév, email, jelszó generálása, és regisztrációja a conduit felületen')
+
     def test_create_single_user(self):
         assert self.page.register_users_from_file()
 
-
-class TestLogin:
+@allure.epic("Felhasználó kezelés")
+class TestLoginLogout:
 
     def setup_method(self):
         self.page = login.LoginUser()
@@ -62,8 +64,21 @@ class TestLogin:
         self.page.close()
 
     @allure.id('TC5')
-    @allure.epic("Felhasználó kezelés")
     @allure.title('Létező felhasználó bejelentkezése')
-    @allure.description(f'A létrehozott <strong>{default_user["user_name"]}</strong> felhasználó bejelentkeztetése')
-    def test_login_user(self):
-        assert self.page.sign_in()
+    @allure.description(f'A létrehozott {default_user["user_name"]} felhasználó bejelentkeztetése')
+    def test_valid_user(self):
+        assert self.page.sign_in(default_user["email"], default_user["password"], default_user["user_name"])
+
+    @allure.id('TC6')
+    @allure.title('Nem létező felhasználó bejelentkezésének visszautasítása')
+    @allure.description(f'A dummy felhasználó bejelentkezésének elutasítása')
+    def test_invalid_user(self):
+        assert not database.exists_user("dummy", "dummy@dummy.com") and not self.page.sign_in("dummy@dummy.com",
+                                                                                              "Password01", "dummy")
+
+    @allure.id('TC7')
+    @allure.title('Létező felhasználó kijelentkezése')
+    @allure.description(f'A létrehozott {default_user["user_name"]} felhasználó kijelentkeztetése')
+    def test_valid_user(self):
+        assert self.page.sign_in(default_user["email"], default_user["password"], default_user["user_name"])
+        assert self.page.logout()
