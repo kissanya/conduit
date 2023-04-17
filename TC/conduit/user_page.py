@@ -1,3 +1,6 @@
+import time
+
+from selenium.common import StaleElementReferenceException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from general_functions import *
@@ -42,42 +45,61 @@ class UserPage(LoginUser):
         return page_link
 
     def articles_preview(self):
+        result = []
         pages = len(self.article_page_links())
         for index_page in range(1, pages + 1):
+
             page = self.article_page_link(index_page)
+            start = time.time()
             page.click()
-
             WebDriverWait(self.browser, 5).until(lambda x: x.execute_script("return document.readyState") == 'complete')
-
+            end = time.time()
             page = self.article_page_link(index_page)
+            print(f"Waiting for load page complete: {end - start}")
+
             active_link = WebDriverWait(self.browser, 5).until(
                 ec.presence_of_element_located(
                     (By.XPATH, f'//li[@class="page-item active"]/a[@class="page-link" and text()="{index_page}"]')))
 
             if page.text == active_link.text:
+                temp_result = []
+                tries = 0
+                while not self.extract_article_preview_elements(temp_result) and tries < 10:
+                    temp_result.clear()
+                    time.sleep(0.1)
+                    print(f"Tries: {tries}")
+                    tries+=1
+                    continue
+                result.extend(temp_result)
+        return result
 
-                users = (self.article_users())
-                titles = (self.article_titles())
-                for index_user in range(len(users)):
-                    yield users[index_user].text, titles[index_user].text
-                del users
-                del titles
+    def extract_article_preview_elements(self, result):
+        users = (self.article_users())
+        titles = (self.article_titles())
+
+        for index_user in range(len(users)):
+            try:
+                result.append((users[index_user].text, titles[index_user].text))
+            except StaleElementReferenceException as e:
+                return  False
         return True
 
     def save_article_previews(self, message) -> bool:
         try:
             with open(article_previews_file, 'w', encoding='UTF-8', newline='') as datafile:
                 writer = csv.writer(datafile)
+
                 for row in self.articles_preview():
                     writer.writerow(row)
             message = f"Mentés megtörtént a {article_previews_file} fájlba"
             return True
         except Exception as ex:
             message = f"Sikertelen mentés: {ex}"
-            return  False
+            return False
+
 
 if __name__ == "__main__":
     user_page = UserPage()
-    for user, title in (user_page.articles_preview()):
-        print(user, title)
+    message = ""
+    user_page.save_article_previews(message)
     user_page.close()
