@@ -1,3 +1,5 @@
+from selenium.webdriver.remote.webelement import WebElement
+
 from general_page import GeneralPage
 import configuration as config
 from selenium.webdriver.common.by import By
@@ -10,7 +12,7 @@ class MainPage(GeneralPage):
         super().__init__(config.get_chrome_driver(), "http://localhost:1667")
         self.open()
 
-    def logo(self):
+    def logo(self) -> WebElement:
         return self.browser.find_element(By.CLASS_NAME, 'logo-font')
 
     def policy_panel(self):

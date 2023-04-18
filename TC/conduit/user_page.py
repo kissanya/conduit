@@ -2,7 +2,6 @@ import time
 
 from selenium.common import StaleElementReferenceException
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
 from general_functions import *
 from configuration import default_user
 from login_user import LoginUser
@@ -34,6 +33,9 @@ class UserPage(LoginUser):
     def article_titles(self):
         return self.browser.find_elements(By.XPATH, '//div[@class="article-preview"]/a[@class="preview-link"]/h1')
 
+    def articles_parent(self):
+        return self.browser.find_element(By.XPATH, '//div[@class = "home-global"]/div/div')
+
     def article_body(self):
         return self.browser.find_elements(By.XPATH, '//div[@class="article-preview"]/a[@class="preview-link"]/h1')
 
@@ -50,40 +52,30 @@ class UserPage(LoginUser):
         for index_page in range(1, pages + 1):
 
             page = self.article_page_link(index_page)
-            start = time.time()
             page.click()
-            WebDriverWait(self.browser, 5).until(lambda x: x.execute_script("return document.readyState") == 'complete')
-            end = time.time()
-            page = self.article_page_link(index_page)
-            print(f"Waiting for load page complete: {end - start}")
+            WebDriverWait(self.browser, 5).until_not(ec.staleness_of(self.articles_parent()))
 
+            page = self.article_page_link(index_page)
             active_link = WebDriverWait(self.browser, 5).until(
                 ec.presence_of_element_located(
                     (By.XPATH, f'//li[@class="page-item active"]/a[@class="page-link" and text()="{index_page}"]')))
 
+            print(f"Page {page.text}")
             if page.text == active_link.text:
-                temp_result = []
-                tries = 0
-                while not self.extract_article_preview_elements(temp_result) and tries < 10:
-                    temp_result.clear()
-                    time.sleep(0.1)
-                    print(f"Tries: {tries}")
-                    tries += 1
-                    continue
-                result.extend(temp_result)
+
+                users = (self.article_users())
+                titles = (self.article_titles())
+
+                for index_user in range(len(users)):
+                    try:
+                        result.append((users[index_user].text, titles[index_user].text))
+                        print((users[index_user].text, titles[index_user].text))
+                    except StaleElementReferenceException as e:
+                        print(f"Error: {e} occured")
+                        return False
+
         return result
 
-    def extract_article_preview_elements(self, result):
-        users = (self.article_users())
-        titles = (self.article_titles())
-
-        for index_user in range(len(users)):
-            try:
-                result.append((users[index_user].text, titles[index_user].text))
-            except StaleElementReferenceException as e:
-                print(f"{e} occured")
-                return False
-        return True
 
     def save_article_previews(self) -> (bool, str):
         try:

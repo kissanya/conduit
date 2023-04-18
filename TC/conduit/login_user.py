@@ -1,8 +1,11 @@
 import time
 
 from selenium.common import TimeoutException
+
+from general_functions import *
 from main_page import MainPage
 from data_layer import *
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
@@ -42,6 +45,9 @@ class LoginUser(MainPage):
 
     def button_logout(self):
         return self.browser.find_element(By.CLASS_NAME, 'ion-android-exit')
+
+    def button_new_article(self):
+        return get_element(self, (By.XPATH, "//a[@href='#/editor']"), 1)
 
     def logout(self):
         if not self.logged_out():

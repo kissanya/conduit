@@ -1,14 +1,23 @@
 import csv
 import datetime
 import json
+import random
+import string
+
+from selenium.webdriver.remote.webelement import WebElement
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as ec
 
 users_data_file = "users_data.csv"
 article_previews_file = "article_previews.csv"
+new_articles_file = "new_articles.csv"
 
 allure_default_descriptions = {
     "TC1": 'Oldal megnyitása és a logó megjelenésének ellenőrzése',
     "TC8": 'A felhasználó által látható összes cikk listázása és mentése'
 }
+
+
 def get_new_user_name(num):
     return 'testuser_' + format(num, "000") + str(datetime.datetime.now()).replace(":", "").replace("-", "").replace(
         ".", "").replace(
@@ -23,6 +32,22 @@ def get_new_password(user):
     return user + "X."
 
 
+def random_strings(prefix, size=5):
+    return prefix.join(random.choices(string.ascii_lowercase, k=size))
+
+
+def random_markdown(prefix, size=5):
+    return "&gt;" + prefix.join(random.choices(string.ascii_lowercase, k=size))
+
+
+def create_articles_file():
+    with open(new_articles_file, 'w', encoding='UTF-8', newline='') as datafile:
+        writer = csv.writer(datafile)
+        title = random_strings('title')
+        summary = random_strings('summary')
+        body = random_strings("article", 50)
+        tags = [random_strings("tag", 50) + i for i in range[3]]
+        writer.writerow([title, summary, body, tags])
 
 
 def create_users_file():
@@ -50,6 +75,20 @@ def save_active_user(username, _email, _password):
     }
     with open("active_user.json", "w", encoding="UTF-8", newline="") as userdata:
         userdata.write((json.dumps(user_object)))
+
+
+def get_element(self, locator: tuple, seconds=2) -> WebElement:
+    """Call -> self.get_element((By.ID, 'elementID'), seconds=N)"""
+    return WebDriverWait(self.browser, seconds).until(
+        ec.presence_of_element_located(locator)
+    )
+
+
+def get_elements(self, locator: tuple, seconds=2) -> list[WebElement]:
+    """Call -> self.get_elements((By.TAG_NAME, 'input'), seconds=N)"""
+    return WebDriverWait(self.browser, seconds).until(
+        ec.presence_of_all_elements_located(locator)
+    )
 
 
 def get_active_user():
