@@ -7,7 +7,7 @@ from general_functions import *
 
 class ArticleEditor(LoginUser):
 
-    def __init__(self, article):
+    def __init__(self):
         super().__init__()
         assert self.sign_in(default_user["email"], default_user["password"], default_user["user_name"])
         self.button_new_article().click()
