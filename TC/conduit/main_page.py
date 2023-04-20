@@ -20,12 +20,12 @@ class MainPage(GeneralPage):
         Adatvédelmi panel lekérése
         :return: ha létezik visszaadja a Panelt
         """
-        panels = self.browser.find_elements(By.ID, 'cookie-policy-panel')
+        panels = self.get_elements((By.ID, 'cookie-policy-panel'))
         if len(panels) > 0:
             return panels[0]
 
     def sign_in_button(self):
-        return self.browser.find_element(By.XPATH, '//a[@href="#/login"]')
+        return self.get_element((By.XPATH, '//a[@href="#/login"]'))
 
     def sign_in_link_exists(self):
         try:

@@ -1,9 +1,9 @@
 from selenium.common import StaleElementReferenceException
 from selenium.webdriver.common.by import By
-from general_functions import *
+
 from configuration import default_user
+from general_functions import *
 from login_user import LoginUser
-from selenium.webdriver.support import expected_conditions as ec
 
 
 class UserPage(LoginUser):
@@ -77,8 +77,8 @@ class UserPage(LoginUser):
         try:
             with open(article_previews_file, 'w', encoding='UTF-8', newline='') as datafile:
                 writer = csv.writer(datafile)
-
-                for row in self.articles_preview():
+                previews = self.articles_preview()
+                for row in previews:
                     writer.writerow(row)
             _message = f"Mentés megtörtént a {article_previews_file} fájlba"
             return True, _message
@@ -88,7 +88,7 @@ class UserPage(LoginUser):
 
 
 if __name__ == "__main__":
-    user_page = UserPage()
+    user_page = UserPage(default_user)
     message = ""
     user_page.save_article_previews()
     user_page.close()

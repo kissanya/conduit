@@ -4,10 +4,6 @@ import json
 import random
 import string
 
-from selenium.webdriver.remote.webelement import WebElement
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as ec
-
 users_data_file = "users_data.csv"
 article_previews_file = "article_previews.csv"
 new_articles_file = "new_articles.csv"
@@ -46,7 +42,7 @@ def create_articles_file():
         title = random_strings('title')
         summary = random_strings('summary')
         body = random_strings("article", 50)
-        tags = [random_strings("tag", 50) + i for i in range[3]]
+        tags = [random_strings("tag", 5) + i for i in range(3)]
         writer.writerow([title, summary, body, tags])
 
 
@@ -75,9 +71,6 @@ def save_active_user(username, _email, _password):
     }
     with open("active_user.json", "w", encoding="UTF-8", newline="") as userdata:
         userdata.write((json.dumps(user_object)))
-
-
-
 
 
 def get_active_user():

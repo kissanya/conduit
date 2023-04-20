@@ -11,7 +11,7 @@ from user_data import UserData
 from user_page import UserPage
 
 
-@allure.epic("Adatkezelési nyilatkozat")
+@allure.epic("Alapok")
 class TestMain:
 
     def setup_method(self):
@@ -131,7 +131,7 @@ class TestArticle:
         assert self.page.edit_article()
 
 
-@allure.epic("Felhasználó adatok")
+@allure.epic("Felhasználókezelés")
 class TestUserData:
     def setup_method(self):
         self.page = UserData()
@@ -147,4 +147,4 @@ class TestUserData:
         assert self.page.change_user_data(self.page.user_name, new_password,
                                           f"En vagyok a default test user, e-mail címem:  {new_email}",
                                           new_email, self.page.picture)
-        assert database.exists_user(self.page.user_name, new_email )
+        assert database.exists_user(self.page.user_name, new_email)

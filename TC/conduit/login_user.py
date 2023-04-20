@@ -5,15 +5,16 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.wait import WebDriverWait
 
+from configuration import default_user
 from data_layer import *
 from main_page import MainPage
 
 
 class LoginUser(MainPage):
 
-    def __init__(self,user_data):
+    def __init__(self, user_data):
         super().__init__()
-        register_user(user_data["user_name"],user_data["email"],user_data["password"] )
+        register_user(user_data["user_name"], user_data["email"], user_data["password"])
         self.sign_in_button().click()
         assert self.sign_in_present()
 
@@ -67,7 +68,7 @@ class LoginUser(MainPage):
 
 
 if __name__ == '__main__':
-    login_page = LoginUser()
+    login_page = LoginUser(default_user)
     print(login_page.sign_in(default_user["email"], default_user["password"], default_user["user_name"]))
     time.sleep(1)
     login_page.logout()

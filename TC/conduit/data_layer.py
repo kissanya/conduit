@@ -1,6 +1,4 @@
 import psycopg2
-
-from configuration import default_user
 from register_user import UserRegistration
 
 
@@ -54,9 +52,9 @@ database = ConduitDatabase('realworld', "user", "userpassword", "localhost", "54
 
 def register_user(user, email, password):
     if not database.exists_user(user, email):
-        register_user = UserRegistration()
-        assert register_user.register_user(user, email, password)
-        register_user.close()
+        user_registration = UserRegistration()
+        assert user_registration.register_user(user, email, password)
+        user_registration.close()
 
 
 if __name__ == '__main__':

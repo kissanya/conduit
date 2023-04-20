@@ -1,4 +1,5 @@
 from selenium.webdriver.common.by import By
+
 from general_functions import *
 from user_page import UserPage
 
@@ -6,19 +7,19 @@ from user_page import UserPage
 class UserData(UserPage):
     def __init__(self):
 
-        self.user_name =get_new_user_name(12)
-        self.picture =""
+        self.user_name = get_new_user_name(12)
+        self.picture = ""
         self.bio = ""
         self.email = get_new_email(self.user_name)
         self.password = get_new_password(self.user_name)
 
-        user_data = {
+        user_object = {
             "user_name": self.user_name,
-            "email":self.email,
-            "password":self.password
+            "email": self.email,
+            "password": self.password
         }
 
-        super().__init__(user_data)
+        super().__init__(user_object)
 
         self.accept_data_policy()
         self.settings_link().click()
@@ -28,13 +29,13 @@ class UserData(UserPage):
         except AssertionError as e:
             print(e)
 
-
     def save_user_tags(self):
         self.user_name = self.username_input().get_attribute('value')
         self.picture = self.picture_input().get_attribute('value')
         self.bio = self.bio_input().get_attribute('value')
         self.email = self.email_input().get_attribute('value')
         self.password = self.password_input().get_attribute('value')
+
     def settings_link(self):
         return self.get_element((By.XPATH, "//a[@href='#/settings']"))
 
