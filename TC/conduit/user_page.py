@@ -39,7 +39,7 @@ class UserPage(LoginUser):
 
     def article_page_link(self, page_index):
         xpath_expression = f"//ul[@class='pagination']/li/a[@class='page-link' and text()='{page_index}']"
-        page_link = self.wait_element_located(xpath_expression)
+        page_link = self.wait_element_located((By.XPATH, xpath_expression))
         assert page_link
         return page_link
 
