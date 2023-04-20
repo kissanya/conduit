@@ -19,7 +19,7 @@
 >_**TC02**_ testeset: MainPage osztály ellenőrzi a cookie panelt 
 >és nyugtázza azt. 
 4. Adatok listázása
->>A **UserPage** osztály a bejelentkezett felhasználó által látható cikkek listáját
+>A **UserPage** osztály a bejelentkezett felhasználó által látható cikkek listáját
 bejárja, és elmenti _article_previews.csv_ fájlban. 
 >A _**TC08**_ testeset.
 5. Több oldalas lista bejárása
