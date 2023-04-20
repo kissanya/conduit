@@ -1,5 +1,5 @@
 
-# Tesztesetek fejlesztői dokumentáció
+# Conduit tesztelés fejlesztői dokumentáció
 
 ## Osztálydiagramm
 
@@ -29,7 +29,7 @@ bejárja. (_**TC08**_ testeset)
 6. Új adat bevitel
 > Az **ArticleEditor** osztály segítségével az új cikk létrehozása lapra navigálunk
 > és új random cikket hozunk létre a _*create_article()__ metódus segítségével
-> Lásd még a [7. pont](Követelmények#7.)
+> Lásd még a [7. pont](Devs#7.)
 7. Ismételt és sorozatos adatbevitel adatforrásból
 > A **Registration** osztály sorozatos 
 >felhasználóregisztrációt valósít meg az _*insert_users_from_file*_
