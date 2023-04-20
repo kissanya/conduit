@@ -6,6 +6,11 @@
 
 ![Osztálydiagram](classdiagram.png)
 
+
+## Tesztesetek
+
+1. 
+
 1. Regisztráció
 >A Registration osztály feladata a sikeres és sikertelen regisztráció
 >végrehajtása és ellenőrzése frontend szinten

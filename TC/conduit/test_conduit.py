@@ -43,7 +43,7 @@ class TestRegistration:
         self.page.close()
 
     @allure.id('TC03')
-    @allure.title('Új felhasználó rögzítése')
+    @allure.title('Új felhasználó regisztrációja')
     def test_create_single_user(self):
         user_name = register.get_new_user_name(0)
         email = user_name + "@testmail.com"
@@ -69,7 +69,7 @@ class TestLoginLogout:
         self.page.close()
 
     @allure.id('TC05')
-    @allure.title('Létező felhasználó bejelentkezése')
+    @allure.title('Felhasználó bejelentkezése')
     @allure.description(f'A létrehozott {default_user["user_name"]} felhasználó bejelentkeztetése')
     def test_valid_user_login(self):
         assert self.page.sign_in(default_user["email"], default_user["password"], default_user["user_name"])
@@ -140,7 +140,7 @@ class TestUserData:
         self.page.close()
 
     @allure.id('TC12')
-    @allure.title('Random létrehozott user adatainak módosítása')
+    @allure.title('Létrehozott felhasználó adatainak módosítása')
     def test_change_user_data(self):
         new_email = get_new_email(self.page.user_name)
         new_password = get_new_password(self.page.user_name)
