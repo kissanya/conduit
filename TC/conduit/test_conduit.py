@@ -102,7 +102,8 @@ class TestUserActions:
     @allure.title('Cikkek listázása és mentése')
     def test_all_articles(self):
         result, message = self.page.save_article_previews()
-        allure.dynamic.description(f"{allure_default_descriptions['TC8']}\nÜzenet:\n{message}")
+        allure.dynamic.description(f"{allure_default_descriptions['TC8']}"
+                                   f" Üzenet:\n{message}")
         assert result
 
 
