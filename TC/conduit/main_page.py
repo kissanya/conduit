@@ -1,9 +1,9 @@
-from selenium.webdriver.remote.webelement import WebElement
-
-from general_page import GeneralPage
-import configuration as config
 from selenium.webdriver.common.by import By
+from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.wait import WebDriverWait
+
+import configuration as config
+from general_page import GeneralPage
 
 
 class MainPage(GeneralPage):
@@ -29,9 +29,9 @@ class MainPage(GeneralPage):
 
     def sign_in_link_exists(self):
         try:
-            element = self.sign_in_button()
-            return True
-        except:
+            return self.sign_in_button().is_displayed()
+        except Exception as e:
+            print(e)
             return False
 
     def policy_accept_button(self):

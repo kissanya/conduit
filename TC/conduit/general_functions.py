@@ -77,18 +77,7 @@ def save_active_user(username, _email, _password):
         userdata.write((json.dumps(user_object)))
 
 
-def get_element(self, locator: tuple, seconds=2) -> WebElement:
-    """Call -> self.get_element((By.ID, 'elementID'), seconds=N)"""
-    return WebDriverWait(self.browser, seconds).until(
-        ec.presence_of_element_located(locator)
-    )
 
-
-def get_elements(self, locator: tuple, seconds=2) -> list[WebElement]:
-    """Call -> self.get_elements((By.TAG_NAME, 'input'), seconds=N)"""
-    return WebDriverWait(self.browser, seconds).until(
-        ec.presence_of_all_elements_located(locator)
-    )
 
 
 def get_active_user():

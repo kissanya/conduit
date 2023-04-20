@@ -1,5 +1,3 @@
-import time
-
 from selenium.common import StaleElementReferenceException
 from selenium.webdriver.common.by import By
 from general_functions import *
@@ -9,9 +7,9 @@ from selenium.webdriver.support import expected_conditions as ec
 
 
 class UserPage(LoginUser):
-    def __init__(self):
-        super().__init__()
-        assert self.sign_in(default_user["email"], default_user["password"], default_user["user_name"])
+    def __init__(self, user_data):
+        super().__init__(user_data)
+        assert self.sign_in(user_data["email"], user_data["password"], user_data["user_name"])
 
     def my_feed_link(self):
         return self.browser.find_element(By.LINK_TEXT, "#/my-feed")
@@ -41,8 +39,7 @@ class UserPage(LoginUser):
 
     def article_page_link(self, page_index):
         xpath_expression = f"//ul[@class='pagination']/li/a[@class='page-link' and text()='{page_index}']"
-        page_link = WebDriverWait(self.browser, 5).until(
-            ec.presence_of_element_located((By.XPATH, xpath_expression)))
+        page_link = self.wait_element_located(xpath_expression)
         assert page_link
         return page_link
 
@@ -53,14 +50,15 @@ class UserPage(LoginUser):
 
             page = self.article_page_link(index_page)
             page.click()
-            WebDriverWait(self.browser, 5).until_not(ec.staleness_of(self.articles_parent()))
 
+            self.wait_not_element_staleness(self.articles_parent())
             page = self.article_page_link(index_page)
-            active_link = WebDriverWait(self.browser, 5).until(
-                ec.presence_of_element_located(
-                    (By.XPATH, f'//li[@class="page-item active"]/a[@class="page-link" and text()="{index_page}"]')))
+
+            active_link = self.wait_element_located(
+                (By.XPATH, f'//li[@class="page-item active"]/a[@class="page-link" and text()="{index_page}"]'))
 
             print(f"Page {page.text}")
+
             if page.text == active_link.text:
 
                 users = (self.article_users())
@@ -73,9 +71,7 @@ class UserPage(LoginUser):
                     except StaleElementReferenceException as e:
                         print(f"Error: {e} occured")
                         return False
-
         return result
-
 
     def save_article_previews(self) -> (bool, str):
         try:

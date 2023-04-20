@@ -1,21 +1,19 @@
 import time
 
 from selenium.common import TimeoutException
-
-from general_functions import *
-from main_page import MainPage
-from data_layer import *
-
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
+from selenium.webdriver.support.wait import WebDriverWait
+
+from data_layer import *
+from main_page import MainPage
 
 
 class LoginUser(MainPage):
 
-    def __init__(self):
+    def __init__(self,user_data):
         super().__init__()
-        register_default_user()
+        register_user(user_data["user_name"],user_data["email"],user_data["password"] )
         self.sign_in_button().click()
         assert self.sign_in_present()
 
@@ -29,6 +27,7 @@ class LoginUser(MainPage):
             link = WebDriverWait(self.browser, 1).until(ec.presence_of_element_located((By.XPATH, xpath)))
             return link.is_displayed()
         except TimeoutException as e:
+            print(e)
             return False
 
     def logged_out(self):
@@ -47,7 +46,7 @@ class LoginUser(MainPage):
         return self.browser.find_element(By.CLASS_NAME, 'ion-android-exit')
 
     def button_new_article(self):
-        return get_element(self, (By.XPATH, "//a[@href='#/editor']"), 1)
+        return self.get_element((By.XPATH, "//a[@href='#/editor']"), 1)
 
     def logout(self):
         if not self.logged_out():

@@ -1,27 +1,28 @@
 @startuml
-'https://plantuml.com/class-diagram
-
-
 
 GeneralPage <|-- MainPage
 MainPage <|-- LoginUser
 GeneralPage <|-- UserRegistration
 LoginUser <|-- UserPage
+LoginUser <|-- ArticleEditor
+UserData <|-- UserPage
 
 TestMain *-- MainPage
 TestRegistration *-- UserRegistration
 TestLoginLogout *-- LoginUser
 TestUserActions  *-- UserPage
+TestNewArticle *-- ArticleEditor
+TestUserData *- UserData
+
 class GeneralPage{
 browser
 url
 open()
 close()
 refresh()
-save_screen(path)
 }
 
-cLass ConduitDatabase{
+class ConduitDatabase{
 
 }
 @enduml

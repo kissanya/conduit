@@ -1,13 +1,14 @@
-import main_page
-import register_user as register
-import login_user as login
 import allure
 
+import login_user as login
+import main_page
+import register_user as register
 from article_editor import ArticleEditor
-from user_page import UserPage
 from configuration import *
 from data_layer import database
 from general_functions import *
+from user_data import UserData
+from user_page import UserPage
 
 
 @allure.epic("Adatkezelési nyilatkozat")
@@ -62,7 +63,7 @@ class TestRegistration:
 class TestLoginLogout:
 
     def setup_method(self):
-        self.page = login.LoginUser()
+        self.page = login.LoginUser(default_user)
 
     def teardown_method(self):
         self.page.close()
@@ -92,7 +93,7 @@ class TestLoginLogout:
 class TestUserActions:
 
     def setup_method(self):
-        self.page = UserPage()
+        self.page = UserPage(default_user)
 
     def teardown_method(self):
         self.page.close()
@@ -106,7 +107,7 @@ class TestUserActions:
 
 
 @allure.epic("Felhasználó akciók")
-class TestNewArticle:
+class TestArticle:
     def setup_method(self):
         self.page = ArticleEditor()
 
@@ -117,3 +118,32 @@ class TestNewArticle:
     @allure.title('Random cikk létrehozása')
     def test_new_article(self):
         assert self.page.create_article()
+
+    @allure.id('TC10')
+    @allure.title('Létrehozott cikk törlése')
+    def test_delete_article(self):
+        assert self.page.delete_article()
+
+    @allure.id('TC11')
+    @allure.title('Létrehozott cikk módosítása')
+    def test_edit_article(self):
+        assert self.page.edit_article()
+
+
+@allure.epic("Felhasználó adatok")
+class TestUserData:
+    def setup_method(self):
+        self.page = UserData()
+
+    def teardown_method(self):
+        self.page.close()
+
+    @allure.id('TC12')
+    @allure.title('Random létrehozott user adatainak módosítása')
+    def test_change_user_data(self):
+        new_email = get_new_email(self.page.user_name)
+        new_password = get_new_password(self.page.user_name)
+        assert self.page.change_user_data(self.page.user_name, new_password,
+                                          f"En vagyok a default test user, e-mail címem:  {new_email}",
+                                          new_email, self.page.picture)
+        assert database.exists_user(self.page.user_name, new_email )

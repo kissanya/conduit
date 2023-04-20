@@ -52,13 +52,14 @@ class ConduitDatabase:
 database = ConduitDatabase('realworld', "user", "userpassword", "localhost", "54320")
 
 
-def register_default_user():
-    if not database.exists_user(default_user["user_name"], default_user["email"]):
+def register_user(user, email, password):
+    if not database.exists_user(user, email):
         register_user = UserRegistration()
-        assert register_user.register_user(default_user["user_name"], default_user["email"], default_user["password"])
+        assert register_user.register_user(user, email, password)
         register_user.close()
 
 
 if __name__ == '__main__':
+    register_user("tesztelek", "tesztelek@tesztelek.hu", "Password01.")
     print(database.exists_user("user32", "user32@mail.com"))
     print(database.exists_user("tesztelek", "tesztelek@tesztelek.hu"))
