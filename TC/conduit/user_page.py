@@ -7,10 +7,13 @@ from login_user import LoginUser
 
 
 class UserPage(LoginUser):
-    def __init__(self, user_data = default_user):
-
-        super().__init__(user_data)
-        assert self.sign_in(user_data["email"], user_data["password"], user_data["user_name"])
+    def __init__(self, user_data=default_user):
+        try:
+            super().__init__(user_data)
+            self.sign_in(user_data["email"], user_data["password"], user_data["user_name"])
+        except Exception as e:
+            print(e)
+            raise e
 
     def my_feed_link(self):
         return self.browser.find_element(By.LINK_TEXT, "#/my-feed")
