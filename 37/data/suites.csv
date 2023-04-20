@@ -1,25 +1,25 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Thu Apr 20 17:16:12 GMT 2023","Thu Apr 20 17:16:16 GMT 2023","3505","TC.conduit","test_conduit","TestArticle","","","Létrehozott cikk törlése",""
-"passed","Thu Apr 20 17:15:57 GMT 2023","Thu Apr 20 17:15:58 GMT 2023","794","TC.conduit","test_conduit","TestLoginLogout","","","Felhasználó bejelentkezése","A létrehozott tesztelek felhasználó bejelentkeztetése"
-"passed","Thu Apr 20 17:15:59 GMT 2023","Thu Apr 20 17:16:00 GMT 2023","1255","TC.conduit","test_conduit","TestLoginLogout","","","Nem létező felhasználó bejelentkezésének visszautasítása","A dummy felhasználó bejelentkezésének elutasítása"
-"passed","Thu Apr 20 17:16:06 GMT 2023","Thu Apr 20 17:16:07 GMT 2023","677","TC.conduit","test_conduit","TestUserActions","","","Cikkek listázása és mentése","A felhasználó által látható összes cikk listázása és mentése Üzenet:
-Mentés megtörtént a article_previews.csv fájlba"
-"passed","Thu Apr 20 17:15:30 GMT 2023","Thu Apr 20 17:15:30 GMT 2023","25","TC.conduit","test_conduit","TestMain","","","Conduit megjelenítése","Oldal megnyitása és a logó megjelenésének ellenőrzése"
-"passed","Thu Apr 20 17:15:33 GMT 2023","Thu Apr 20 17:15:36 GMT 2023","2595","TC.conduit","test_conduit","TestRegistration","","","Új felhasználó regisztrációja","Felhasználónév:testuser_020230420171533430371, email testuser_020230420171533430371@testmail.com,
- jelszó Password_01. rögzítve"
-"passed","Thu Apr 20 17:15:31 GMT 2023","Thu Apr 20 17:15:32 GMT 2023","580","TC.conduit","test_conduit","TestMain","","","Conduit adatkezelési nyilatkozat","Adatkezelési nyilatkozat megléte és elfogadása"
-"passed","Thu Apr 20 17:16:26 GMT 2023","Thu Apr 20 17:16:28 GMT 2023","1985","TC.conduit","test_conduit","TestUserData","","","Létrehozott felhasználó adatainak módosítása",""
-"passed","Thu Apr 20 17:15:37 GMT 2023","Thu Apr 20 17:15:53 GMT 2023","16611","TC.conduit","test_conduit","TestRegistration","","","10 új felhasználó rögzítése","testuser_020230420171537092239 felhasználó létrehozva
-testuser_120230420171537092263 felhasználó létrehozva
-testuser_220230420171537092271 felhasználó létrehozva
-testuser_320230420171537092278 felhasználó létrehozva
-testuser_420230420171537092285 felhasználó létrehozva
-testuser_520230420171537092291 felhasználó létrehozva
-testuser_620230420171537092298 felhasználó létrehozva
-testuser_720230420171537092304 felhasználó létrehozva
-testuser_820230420171537092311 felhasználó létrehozva
-testuser_920230420171537092324 felhasználó létrehozva
+"passed","Thu Apr 20 19:14:56 GMT 2023","Thu Apr 20 19:14:56 GMT 2023","25","TC.conduit","test_conduit","TestMain","","","Conduit megjelenítése","Oldal megnyitása és a logó megjelenésének ellenőrzése"
+"passed","Thu Apr 20 19:15:02 GMT 2023","Thu Apr 20 19:15:19 GMT 2023","16657","TC.conduit","test_conduit","TestRegistration","","","10 új felhasználó rögzítése","testuser_020230420191502675462 felhasználó létrehozva
+testuser_120230420191502675487 felhasználó létrehozva
+testuser_220230420191502675496 felhasználó létrehozva
+testuser_320230420191502675503 felhasználó létrehozva
+testuser_420230420191502675510 felhasználó létrehozva
+testuser_520230420191502675517 felhasználó létrehozva
+testuser_620230420191502675523 felhasználó létrehozva
+testuser_720230420191502675530 felhasználó létrehozva
+testuser_820230420191502675536 felhasználó létrehozva
+testuser_920230420191502675550 felhasználó létrehozva
 "
-"passed","Thu Apr 20 17:16:01 GMT 2023","Thu Apr 20 17:16:04 GMT 2023","2872","TC.conduit","test_conduit","TestLoginLogout","","","Létező felhasználó kijelentkezése","A létrehozott tesztelek felhasználó kijelentkeztetése"
-"passed","Thu Apr 20 17:16:18 GMT 2023","Thu Apr 20 17:16:21 GMT 2023","2767","TC.conduit","test_conduit","TestArticle","","","Létrehozott cikk módosítása",""
-"passed","Thu Apr 20 17:16:09 GMT 2023","Thu Apr 20 17:16:11 GMT 2023","1732","TC.conduit","test_conduit","TestArticle","","","Random cikk létrehozása",""
+"passed","Thu Apr 20 19:15:43 GMT 2023","Thu Apr 20 19:15:46 GMT 2023","2379","TC.conduit","test_conduit","TestArticle","","","Létrehozott cikk módosítása",""
+"passed","Thu Apr 20 19:15:35 GMT 2023","Thu Apr 20 19:15:36 GMT 2023","1242","TC.conduit","test_conduit","TestArticle","","","Random cikk létrehozása",""
+"passed","Thu Apr 20 19:15:27 GMT 2023","Thu Apr 20 19:15:30 GMT 2023","2897","TC.conduit","test_conduit","TestLoginLogout","","","Létező felhasználó kijelentkezése","A létrehozott tesztelek felhasználó kijelentkeztetése"
+"passed","Thu Apr 20 19:15:32 GMT 2023","Thu Apr 20 19:15:33 GMT 2023","720","TC.conduit","test_conduit","TestUserActions","","","Cikkek listázása és mentése","A felhasználó által látható összes cikk listázása és mentése Üzenet:
+Mentés megtörtént a article_previews.csv fájlba"
+"passed","Thu Apr 20 19:15:25 GMT 2023","Thu Apr 20 19:15:26 GMT 2023","1277","TC.conduit","test_conduit","TestLoginLogout","","","Nem létező felhasználó bejelentkezésének visszautasítása","A dummy felhasználó bejelentkezésének elutasítása"
+"passed","Thu Apr 20 19:14:59 GMT 2023","Thu Apr 20 19:15:01 GMT 2023","2607","TC.conduit","test_conduit","TestRegistration","","","Új felhasználó regisztrációja","Felhasználónév:testuser_020230420191459010694, email testuser_020230420191459010694@testmail.com,
+ jelszó Password_01. rögzítve"
+"passed","Thu Apr 20 19:14:57 GMT 2023","Thu Apr 20 19:14:57 GMT 2023","76","TC.conduit","test_conduit","TestMain","","","Conduit adatkezelési nyilatkozat","Adatkezelési nyilatkozat megléte és elfogadása"
+"passed","Thu Apr 20 19:15:52 GMT 2023","Thu Apr 20 19:15:54 GMT 2023","2027","TC.conduit","test_conduit","TestUserData","","","Létrehozott felhasználó adatainak módosítása",""
+"passed","Thu Apr 20 19:15:23 GMT 2023","Thu Apr 20 19:15:23 GMT 2023","802","TC.conduit","test_conduit","TestLoginLogout","","","Felhasználó bejelentkezése","A létrehozott tesztelek felhasználó bejelentkeztetése"
+"passed","Thu Apr 20 19:15:38 GMT 2023","Thu Apr 20 19:15:41 GMT 2023","3431","TC.conduit","test_conduit","TestArticle","","","Létrehozott cikk törlése",""
