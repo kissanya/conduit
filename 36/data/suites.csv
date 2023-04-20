@@ -1,0 +1,25 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Apr 20 17:02:21 GMT 2023","Thu Apr 20 17:02:21 GMT 2023","162","TC.conduit","test_conduit","TestMain","","","Conduit adatkezelési nyilatkozat","Adatkezelési nyilatkozat megléte és elfogadása"
+"passed","Thu Apr 20 17:02:55 GMT 2023","Thu Apr 20 17:02:56 GMT 2023","709","TC.conduit","test_conduit","TestUserActions","","","Cikkek listázása és mentése","A felhasználó által látható összes cikk listázása és mentése Üzenet:
+Mentés megtörtént a article_previews.csv fájlba"
+"passed","Thu Apr 20 17:02:22 GMT 2023","Thu Apr 20 17:02:25 GMT 2023","3000","TC.conduit","test_conduit","TestRegistration","","","Új felhasználó regisztrációja","Felhasználónév:testuser_020230420170222326203, email testuser_020230420170222326203@testmail.com,
+ jelszó Password_01. rögzítve"
+"passed","Thu Apr 20 17:02:19 GMT 2023","Thu Apr 20 17:02:19 GMT 2023","91","TC.conduit","test_conduit","TestMain","","","Conduit megjelenítése","Oldal megnyitása és a logó megjelenésének ellenőrzése"
+"passed","Thu Apr 20 17:02:26 GMT 2023","Thu Apr 20 17:02:42 GMT 2023","15813","TC.conduit","test_conduit","TestRegistration","","","10 új felhasználó rögzítése","testuser_020230420170226400320 felhasználó létrehozva
+testuser_120230420170226400344 felhasználó létrehozva
+testuser_220230420170226400352 felhasználó létrehozva
+testuser_320230420170226400359 felhasználó létrehozva
+testuser_420230420170226400366 felhasználó létrehozva
+testuser_520230420170226400373 felhasználó létrehozva
+testuser_620230420170226400379 felhasználó létrehozva
+testuser_720230420170226400385 felhasználó létrehozva
+testuser_820230420170226400392 felhasználó létrehozva
+testuser_920230420170226400407 felhasználó létrehozva
+"
+"passed","Thu Apr 20 17:03:06 GMT 2023","Thu Apr 20 17:03:09 GMT 2023","2334","TC.conduit","test_conduit","TestArticle","","","Létrehozott cikk módosítása",""
+"passed","Thu Apr 20 17:02:48 GMT 2023","Thu Apr 20 17:02:49 GMT 2023","1265","TC.conduit","test_conduit","TestLoginLogout","","","Nem létező felhasználó bejelentkezésének visszautasítása","A dummy felhasználó bejelentkezésének elutasítása"
+"passed","Thu Apr 20 17:03:14 GMT 2023","Thu Apr 20 17:03:16 GMT 2023","2033","TC.conduit","test_conduit","TestUserData","","","Létrehozott felhasználó adatainak módosítása",""
+"passed","Thu Apr 20 17:02:50 GMT 2023","Thu Apr 20 17:02:53 GMT 2023","2890","TC.conduit","test_conduit","TestLoginLogout","","","Létező felhasználó kijelentkezése","A létrehozott tesztelek felhasználó kijelentkeztetése"
+"passed","Thu Apr 20 17:02:46 GMT 2023","Thu Apr 20 17:02:46 GMT 2023","774","TC.conduit","test_conduit","TestLoginLogout","","","Felhasználó bejelentkezése","A létrehozott tesztelek felhasználó bejelentkeztetése"
+"passed","Thu Apr 20 17:03:01 GMT 2023","Thu Apr 20 17:03:04 GMT 2023","3537","TC.conduit","test_conduit","TestArticle","","","Létrehozott cikk törlése",""
+"passed","Thu Apr 20 17:02:58 GMT 2023","Thu Apr 20 17:02:59 GMT 2023","1212","TC.conduit","test_conduit","TestArticle","","","Random cikk létrehozása",""
