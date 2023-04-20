@@ -93,7 +93,7 @@ class TestLoginLogout:
 class TestUserActions:
 
     def setup_method(self):
-        self.page = UserPage(default_user)
+        self.page = UserPage()
 
     def teardown_method(self):
         self.page.close()

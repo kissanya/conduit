@@ -7,7 +7,8 @@ from login_user import LoginUser
 
 
 class UserPage(LoginUser):
-    def __init__(self, user_data):
+    def __init__(self, user_data = default_user):
+
         super().__init__(user_data)
         assert self.sign_in(user_data["email"], user_data["password"], user_data["user_name"])
 
@@ -88,7 +89,7 @@ class UserPage(LoginUser):
 
 
 if __name__ == "__main__":
-    user_page = UserPage(default_user)
+    user_page = UserPage()
     message = ""
     user_page.save_article_previews()
     user_page.close()
