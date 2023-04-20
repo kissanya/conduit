@@ -131,7 +131,7 @@ class TestArticle:
         assert self.page.edit_article()
 
 
-@allure.epic("Felhasználókezelés")
+@allure.epic("Felhasználó kezelés")
 class TestUserData:
     def setup_method(self):
         self.page = UserData()
