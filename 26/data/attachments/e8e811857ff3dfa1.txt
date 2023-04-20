@@ -1,0 +1,23 @@
+Message: no such element: Unable to locate element: {"method":"xpath","selector":"//a[@href="#/login"]"}
+  (Session info: headless chrome=112.0.5615.121)
+Stacktrace:
+#0 0x55b2aaad0fe3 <unknown>
+#1 0x55b2aa80fd36 <unknown>
+#2 0x55b2aa84cc4d <unknown>
+#3 0x55b2aa84cd61 <unknown>
+#4 0x55b2aa8886a4 <unknown>
+#5 0x55b2aa86d8ed <unknown>
+#6 0x55b2aa886232 <unknown>
+#7 0x55b2aa86d693 <unknown>
+#8 0x55b2aa84003a <unknown>
+#9 0x55b2aa84117e <unknown>
+#10 0x55b2aaa92dbd <unknown>
+#11 0x55b2aaa96c6c <unknown>
+#12 0x55b2aaaa04b0 <unknown>
+#13 0x55b2aaa97d63 <unknown>
+#14 0x55b2aaa6ac35 <unknown>
+#15 0x55b2aaabb138 <unknown>
+#16 0x55b2aaabb2c7 <unknown>
+#17 0x55b2aaac9093 <unknown>
+#18 0x7f7275b6cb43 <unknown>
+
