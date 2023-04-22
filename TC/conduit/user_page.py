@@ -85,12 +85,11 @@ class UserPage(LoginUser):
         for index_user in range(len(users)):
             try:
 
-                tags = [element.text for element in self.article_preview_tags(index_user)]
                 data_to_save = (users[index_user].text,
                                 titles[index_user].text,
                                 summaries[index_user].text,
-                                dates[index_user].text,
-                                tags
+                                dates[index_user].text
+
                                 )
                 data.append(data_to_save)
                 print(data_to_save)
