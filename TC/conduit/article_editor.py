@@ -1,5 +1,4 @@
 from selenium.webdriver.common.by import By
-from configuration import default_user
 from general_functions import *
 from login_user import LoginUser
 
