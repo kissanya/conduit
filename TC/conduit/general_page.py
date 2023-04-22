@@ -1,12 +1,12 @@
-import time
+from datetime import datetime
 
+from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
-from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
+from selenium.webdriver.support.wait import WebDriverWait
+
 import configuration as config
-from selenium import webdriver
-from datetime import datetime
 
 
 class GeneralPage:
@@ -72,7 +72,5 @@ class GeneralPage:
 
 if __name__ == '__main__':
     page = GeneralPage(config.get_chrome_driver(), 'http://localhost:1667')
-    page.open()
-    time.sleep(1)
     page.open()
     page.close()

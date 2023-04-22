@@ -4,13 +4,41 @@ import json
 import random
 import string
 
+from configuration import default_user
+
 users_data_file = "users_data.csv"
 article_previews_file = "article_previews.csv"
 new_articles_file = "new_articles.csv"
 
 allure_default_descriptions = {
-    "TC1": 'Oldal megnyitása és a logó megjelenésének ellenőrzése',
-    "TC8": 'A felhasználó által látható összes cikk listázása és mentése'
+    "TC01": '1. Oldal megnyitása \n Logó megjelenésének ellenőrzése',
+    "TC02": '1. Adatkezelési nyilatkozat megléte \n'
+            '2. Annak elfogadása',
+    "TC03": 'Dinamikus leírás',
+    "TC04": '1. users_data.csv létrehozása.'
+            '2. users_data.csv beolvasása,'
+            '3. Felhasználók beregisztrálása.',
+    "TC05": f'1. A létrehozott {default_user["user_name"]} felhasználó bejelentkeztetése',
+    "TC06": ' 1. A dummy felhasználó bejelentkezésének elutasítása',
+    "TC07": f'1. A létrehozott {default_user["user_name"]} felhasználó kijelentkeztetése',
+    "TC08": '1. Felhasználó bejelentkezés \n'
+            '2. A felhasználó által látható összes cikk listázása',
+    "TC09": '1. Felhasználó bejelentkezés \n'
+            '2. Új cikk létrehozása generált adatokkal.',
+    "TC10": '1. Felhasználó bejelentkezés \n'
+            '2. Új cikk létrehozása generált adatokkal.\n'
+            '3. Cikk törlése',
+    "TC11": '1. Felhasználó bejelentkezés \n'
+            '2. Új cikk létrehozása generált adatokkal.\n'
+            '3. Cikk módosítása',
+    "TC12": '1. Új Felhasználó létrehozása \n'
+            '2. Bejelentkezés \n'
+            '3. E-mail cím módosítása\n'
+            '4. E-mail cím ellenőrzése adatbázisban',
+    "TC13": '1. Felhasználó bejelentkezés \n'
+            '2. A felhasználó által látható összes cikk listázása\n' 
+            '3. A felhasználó által látható összes cikk előnézetének listázása és mentése fájlba'
+
 }
 
 
