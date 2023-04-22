@@ -28,7 +28,7 @@ class UserPage(LoginUser):
         return pages_links
 
     def articles_parent(self):
-        return self.get_element((By.XPATH, '//div[@class = "home-global"]/div/div'))
+        return self.get_element((By.XPATH, '//div[@class = "home-global"]'))
 
     def article_preview_users(self):
         return self.get_elements((By.XPATH, '//div[@class="article-meta"]/div[@class="info"]/a[text()]'))
@@ -84,6 +84,7 @@ class UserPage(LoginUser):
         dates = self.article_preview_dates()
         for index_user in range(len(users)):
             try:
+
                 tags = [element.text for element in self.article_preview_tags(index_user)]
                 data_to_save = (users[index_user].text,
                                 titles[index_user].text,
