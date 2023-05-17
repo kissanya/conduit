@@ -5,7 +5,7 @@ MainPage <|-- LoginUser
 GeneralPage <|-- UserRegistration
 LoginUser <|-- UserPage
 LoginUser <|-- ArticleEditor
-UserData <|-- UserPage
+UserPage <|-- UserData
 
 TestMain *-- MainPage
 TestRegistration *-- UserRegistration

@@ -1,3 +1,4 @@
+import pytest
 from selenium.common import StaleElementReferenceException
 from selenium.webdriver.common.by import By
 from general_functions import *
@@ -54,6 +55,7 @@ class UserPage(LoginUser):
         assert page_link
         return page_link
 
+
     def articles_previews_browse(self):
         data = []
         result = True
@@ -76,6 +78,7 @@ class UserPage(LoginUser):
             else:
                 result = False
         return result, data
+
 
     def extract_previews_data(self, data):
         users = self.article_preview_users()

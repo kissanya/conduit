@@ -3,3 +3,4 @@ pytest
 allure-pytest
 webdriver-manager
 psycopg2
+
